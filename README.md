@@ -20,5 +20,5 @@ Geospatial data for Vancouver parks was obtained from the [BC Data Catalogue](ht
 # Analysis Plan 
 1) Geotagged species observations will be spatially clipped to obtain the observations that occur within the spatial bounds of parks. 
 2) The spatial distribution of parks will be mapped with an overlay of park species obsevations. 
-3) The species counts for each park will be ranked to obtain the top 5 parks with the most observations. 
-4) The species richness (count of unique species) will then be calculated for each park to obtain the top 5 parks with the highest species richness. 
+3) The species counts for each park will be ranked to obtain the top 10 parks with the most observations. 
+4) The species richness (count of unique species) will then be calculated for each park to obtain the top 10 parks with the highest species richness. 
