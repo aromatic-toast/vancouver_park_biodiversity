@@ -132,3 +132,5 @@ dmypy.json
 *misc/
 *.zip
 *parks_gbif.html
+.Rproj.user
+*Rproj
