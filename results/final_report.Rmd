@@ -1,0 +1,53 @@
+---
+title: "final_report"
+author: "Lesley Miller"
+date: "07/06/2020"
+output: html_document
+runtime: shiny
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+```
+
+
+## R Markdown
+
+## Results {.tabset}
+
+### Kepler Plot
+```{r}
+#htmltools::includeHTML("kepler_html/gbif_and_parks.html")
+```
+
+
+
+
+### GBIF Summary
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+shinyApp(
+
+  ui = fluidPage(
+    selectInput("region", "Region:",
+                choices = colnames(WorldPhones)),
+    plotOutput("phonePlot")
+  ),
+
+  server = function(input, output) {
+    output$phonePlot = renderPlot({
+      barplot(WorldPhones[,input$region]*1000,
+              ylab = "Number of Telephones", xlab = "Year")
+    })
+  },
+
+  options = list(height = 500)
+)
+```
+
+
+
