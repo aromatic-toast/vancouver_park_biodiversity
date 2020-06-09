@@ -394,10 +394,10 @@ config={
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 49.25404543255076,
-      "longitude": -123.14339725990108,
+      "latitude": 49.26912911359438,
+      "longitude": -123.15891023046912,
       "pitch": 0,
-      "zoom": 11.761913485540404,
+      "zoom": 12.058158793119912,
       "isSplit": False
     },
     "mapStyle": {
