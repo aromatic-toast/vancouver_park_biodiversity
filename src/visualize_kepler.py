@@ -40,90 +40,6 @@ config={
       "filters": [],
       "layers": [
         {
-          "id": "g76c2i",
-          "type": "point",
-          "config": {
-            "dataId": "species",
-            "label": "Point",
-            "color": [
-              171,
-              188,
-              237
-            ],
-            "columns": {
-              "lat": "latitude",
-              "lng": "longitude",
-              "altitude": None
-            },
-            "isVisible": True,
-            "visConfig": {
-              "radius": 4,
-              "fixedRadius": False,
-              "opacity": 0.8,
-              "outline": False,
-              "thickness": 2,
-              "strokeColor": None,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "strokeColorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "radiusRange": [
-                0,
-                50
-              ],
-              "filled": True
-            },
-            "hidden": False,
-            "textLabel": [
-              {
-                "field": None,
-                "color": [
-                  255,
-                  255,
-                  255
-                ],
-                "size": 18,
-                "offset": [
-                  0,
-                  0
-                ],
-                "anchor": "start",
-                "alignment": "center"
-              }
-            ]
-          },
-          "visualChannels": {
-            "colorField": None,
-            "colorScale": "quantile",
-            "strokeColorField": None,
-            "strokeColorScale": "quantile",
-            "sizeField": None,
-            "sizeScale": "linear"
-          }
-        },
-        {
           "id": "knderf",
           "type": "geojson",
           "config": {
@@ -137,7 +53,7 @@ config={
             "columns": {
               "geojson": "geometry"
             },
-            "isVisible": False,
+            "isVisible": True,
             "visConfig": {
               "opacity": 0.8,
               "strokeOpacity": 0.8,
@@ -169,7 +85,7 @@ config={
                   "#FFC300"
                 ]
               },
-              "radius": 0.2,
+              "radius": 5,
               "sizeRange": [
                 0,
                 10
@@ -445,14 +361,12 @@ config={
             "park_outliers": [
               "park_name",
               "park_type",
-              "park_prima",
               "observation_count",
               "unique_species_count"
             ],
             "parks": [
               "park_name",
               "park_type",
-              "park_prima",
               "observation_count",
               "unique_species_count"
             ]
@@ -480,10 +394,10 @@ config={
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 49.25187911925705,
-      "longitude": -123.12385345333853,
+      "latitude": 49.24969350216146,
+      "longitude": -123.11658483863074,
       "pitch": 0,
-      "zoom": 11.678059714221947,
+      "zoom": 11.4986719208293,
       "isSplit": False
     },
     "mapStyle": {
