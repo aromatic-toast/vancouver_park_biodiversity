@@ -57,14 +57,13 @@ parks_with_no_outliers <- parks_with_no_outliers %>%
 
 
 ## Introduction
+The primary interest of this project was to explore the intersection between Vancouver, BC parks and geotagged species occurrence data obtained from the [Global Biodiversity Information Facility](https://www.gbif.org/), known from here on as GBIF. Any Vancouverite would be proud of our city parks and greenspaces as they serve as immense community resources with multifunctional benefits. Given that urban parks may be the primary interface with nature and wildlife for a great number of residents, this project attempted to answer how much species occurrence data has been collected in Vancouver parks over the last 10 years. The analysis answers 3 main questions. 
 
-```{r park_use}
-park_use <- tibble(Use_Table = unique(parks_with_no_outliers$park_primary_use))
-kable(park_use, caption = "Primary Uses of Vancouver Parks")
-```
+1) What proportion of Vancouver's biodiversity data is recorded in an urban park?
+2) Which parks contain the most observations?
+3) Which parks contain the largest number of different species?
 
-
-
+To answer these questions, the analysis makes use of two main data sources: Species occurrence data from [GBIF](https://www.gbif.org/) and spatial parks data from the [BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/local-and-regional-greenspaces). The interactive tables below allows a peak at the data underlying the analysis. Only the first few rows of each dataset are shown. 
 
 
 ## Data Sources {.tabset .tabset-pills}
@@ -109,7 +108,34 @@ shinyApp(
 
 ```
 
-`
+```{r park_use}
+park_use <- tibble(Use_Table = unique(parks_with_no_outliers$park_primary_use))
+kable(park_use, caption = "Primary Uses of Vancouver Parks")
+```
+
+# Analysis Methods 
+
+This analysis was carried out with the amazing help from the following open source R packages: R [@R], tidyverse [@tidyverse], here [@here], gridExtra [@gridExtra] and sf [@sf]. And the following Python packages: Python [@Python], NumPy [@oliphant2006guide], GeoPandas [@geopandas0.7.0], Pandas [@pandas] and kepler.gl [@keplergl].
+
+## Data Cleaning 
+The raw GBIF data was first obtained through their API and then clipped to a gridded boundary obtained from the [City of Vancouver Open Data Portal]('https://opendata.vancouver.ca/explore/dataset/facet-grid-boundaries/map/?location=12,49.2562,-123.1389'). The data was then cleaned by removal of unnecessary columns. The parks dataset underwent only minimal processing to retain only necessary columns for downstream analysis. 
+
+## Data Preparation 
+Since the analysis was primarily visual, the data was then processed to produce new data that could be fed into a multi-layer map. The GBIF data points were clipped to within the park boundaries and the total observation counts as well as the count of unique species per park were calculated. The clipped GBIF data and the parks along with its species metrics then became data layers in a keplergl map available [here for exploration](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
+
+## Data Visualization 
+
+
+
+
+
+# Results 
+**What proportion of Vancouver's biodiversity data is recorded in an urban park?**
+
+**Which parks contain the most observations?**
+
+**Which parks contain the largest number of different species?**
+
 
 ## Observation Hotspots {.tabset .tabset-pills}
 
@@ -123,7 +149,7 @@ species_in_out_df <- tibble(count_observed_in_park = c('yes', 'no'),
                             count = c(observed_in_park, outside_park))
 
 pie <- species_in_out_df %>% 
-  ggplot(aes(x= factor(1), fill = count_observed_in_park)) +
+  ggplot(aes(x = factor(1), fill = count_observed_in_park)) +
   geom_bar(width = 1) +
   coord_polar("y") + 
   theme(axis.text = element_blank(),
@@ -168,6 +194,7 @@ plot2_1
 ```
 
 
+
 ## Highest Unique Species {.tabset .tabset-pills}
 
 ### No Outliers
@@ -203,8 +230,8 @@ plot3_1
 
 
 
-# Analysis Methods 
 
-This analysis was carried out with the amazing help from the following open source R packages: R [@R], tidyverse [@tidyverse], here [@here], gridExtra [@gridExtra] and sf [@sf]. And the following Python packages: Python [@Python], NumPy [@oliphant2006guide], GeoPandas [@geopandas0.7.0], Pandas [@pandas] and kepler.gl [@keplergl].
+
+# Conclusions
 
 # References
