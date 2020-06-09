@@ -2,7 +2,12 @@
 title: "Biodiversity in Vancouver Parks"
 author: "Lesley Miller"
 date: "07/06/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    pandoc_args: --webtex
+always_allow_html: true
+bibliography: citations.bib
 runtime: shiny
 ---
 
@@ -56,7 +61,7 @@ kable(park_use, caption = "Primary Uses of Vancouver Parks")
 ```
 
 
-## Data Sources {.tabset}
+## Data Sources {.tabset .tabset-pills}
 
 ### GBIF Data
 ```{r gbif_data}
@@ -95,12 +100,20 @@ kable(park_use, caption = "Primary Uses of Vancouver Parks")
 
 ```
 
-## Results {.tabset}
+## Kepler Map 
+```{r}
+knitr::include_url("https://yihui.org")
+```
+
+
+## Results {.tabset .tabset-pills}
 
 ### No Outliers
+
 ```{r}
-include_graphics("results/no_outliers.png")
+knitr::include_graphics("results/no_outliers.png")
 ```
+
 
 ### Outliers
 ```{r}
@@ -112,7 +125,6 @@ include_graphics("results/outliers.png")
 ```{r top_metrics}
 
 # DataTables 
-  # DataTables example
   shinyApp(
     ui = fluidPage(
       fluidRow(
@@ -127,4 +139,8 @@ include_graphics("results/outliers.png")
   )
 ```
 
+# Analysis Methods 
 
+This analysis was carried out with the amazing help from the following open source R packages: R [@R], tidyverse [@tidyverse], here [@here], gridExtra [@gridExtra] and sf [@sf]. And the following Python packages: Python [@Python], NumPy [@oliphant2006guide], GeoPandas [@geopandas0.7.0], Pandas [@pandas] and kepler.gl [@keplergl].
+
+# References

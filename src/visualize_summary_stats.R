@@ -95,6 +95,7 @@ plot_grid2 <- grid.arrange(plot2_1, plot3_1)
 #### Save Plots and Tables for final report #### 
 ggsave(filename = "no_outliers.png", plot = plot_grid1, path = 'results/')
 ggsave(filename = "outliers.png", plot = plot_grid2, path = 'results/')
-ggsave(filename = "top_obs_hotspots.png", plot = plot1, path = 'results/')
-ggsave(filename = "top_species_rich.png", plot = plot2, path = 'results/')
+ggsave(filename = "within_outside_parks.png", plot = plot1, path = 'results/')
+ggsave(filename = "obs_hotspots_no_outliers.png", plot = plot2, path = 'results/')
+ggsave(filename = "top_species_rich.png", plot = plot3, path = 'results/')
 
