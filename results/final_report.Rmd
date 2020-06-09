@@ -31,6 +31,7 @@ gbif <- st_read('data/clean_data/vancouver_gbif.shp', quiet = TRUE)
 parks <- read_csv("data/clean_data/all_parks_with_metrics.csv", col_types = cols()) # 
 test_parks <- parks[!is.na(parks$park_name), ]
 test_parks <- test_parks %>% select(park_name, species_count, species_richness)
+
 parks <- parks %>% 
       select(park_name, species_count, species_richness)
 
