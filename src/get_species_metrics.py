@@ -25,7 +25,7 @@ clipped_gbif = gpd.clip(gdf=gbif, mask=parks)
 # add species metrics for all parks
 print("Calculating species metrics...")
 parks_counts_gdf = bio.add_species_metrics(species_gdf=clipped_gbif, parks_gdf=parks)
-parks_counts_gdf = pd.DataFrame(parks_counts_gdf)
+counts_df = pd.DataFrame(parks_counts_gdf)
 
 
 ##### Prepare dataframes for visualization layers #### 
@@ -42,6 +42,6 @@ print("Writing new shapefiles for visualization...")
 clipped_gbif.to_file('data/clean_data/clipped_gbif.shp')
 park_outliers.to_file('data/clean_data/park_outliers.shp')
 parks_with_no_outliers.to_file('data/clean_data/parks_with_no_outliers.shp')
-parks_counts_gdf.to_csv('data/clean_data/all_parks_with_metrics.csv', index=False)
+counts_df.to_csv('data/clean_data/all_parks_with_metrics.csv', index=False)
 
 

@@ -15,9 +15,18 @@ import pandas as pd
 import biodiv_functions as bio
 from keplergl import KeplerGl
 
+# read in gbif data 
 clipped_gbif = gpd.read_file('data/clean_data/clipped_gbif.shp')
+clipped_gbif = clipped_gbif.rename(columns={'basis_of_r': 'record_type'})
+
+# read in park
 park_outliers = gpd.read_file('data/clean_data/park_outliers.shp')
+park_outliers = park_outliers.rename(columns={'species_co': "observation_count",
+                                              'species_ri': "unique_species_count"})
+
+# read in non outlier park data                                               
 parks_with_no_outliers = gpd.read_file('data/clean_data/parks_with_no_outliers.shp')
+parks_with_no_outliers = parks_with_no_outliers.rename(columns={'species_co': "observation_count", 'species_ri': "unique_species_count"})
 
 # kepler config dict 
 config={
