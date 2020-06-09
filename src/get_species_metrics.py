@@ -25,7 +25,7 @@ clipped_gbif = gpd.clip(gdf=gbif, mask=parks)
 # add species metrics for all parks
 print("Calculating species metrics...")
 parks_counts_gdf = bio.add_species_metrics(species_gdf=clipped_gbif, parks_gdf=parks)
-parks_counts = pd.DataFrame(parks_counts_gdf)
+parks_counts_gdf = pd.DataFrame(parks_counts_gdf)
 
 
 ##### Prepare dataframes for visualization layers #### 
