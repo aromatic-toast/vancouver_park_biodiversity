@@ -15,7 +15,7 @@ Urban parks provide an array of physical and psycholocial benefits to city resid
 # Data Sources 
 
 ## Global Biodiversity Information Facility 
-[GBIF](https://www.gbif.org/) is a massive database that contains geotagged observation data for individual species (e.g. pland and animals). Species occurrence data was obtained from GBIF for City of Vancouver as well as the area of UBC and the Endowment Lands for the years between 2009 and 2019. 
+[GBIF](https://www.gbif.org/) is a massive database that contains geotagged observation data for individual species (e.g. plant and animals). Species occurrence data was obtained from GBIF for City of Vancouver as well as the area of UBC and the Endowment Lands for the years between 2009 and 2019. 
 
 ## Local & Regional Greenspaces 
 Geospatial data for Vancouver parks was obtained from the [BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/local-and-regional-greenspaces)
