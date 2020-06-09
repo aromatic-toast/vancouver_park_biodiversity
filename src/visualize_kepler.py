@@ -394,10 +394,10 @@ config={
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 49.24969350216146,
-      "longitude": -123.11658483863074,
+      "latitude": 49.25404543255076,
+      "longitude": -123.14339725990108,
       "pitch": 0,
-      "zoom": 11.4986719208293,
+      "zoom": 11.761913485540404,
       "isSplit": False
     },
     "mapStyle": {
@@ -425,7 +425,7 @@ config={
 ##### Make kepler map ###### 
 plot = bio.plot_kepler(layers=[clipped_gbif, park_outliers, parks_with_no_outliers],
                    names=['species', 'park_outliers','parks'],
-                   config=None)
+                   config=config)
                    
 plot.save_to_html(file_name='results/final_report_map.html')                 
 
