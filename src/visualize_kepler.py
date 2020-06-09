@@ -45,16 +45,16 @@ config={
             "dataId": "species",
             "label": "Point",
             "color": [
-              71,
-              211,
-              217
+              171,
+              188,
+              237
             ],
             "columns": {
               "lat": "latitude",
               "lng": "longitude",
               "altitude": None
             },
-            "isVisible": False,
+            "isVisible": True,
             "visConfig": {
               "radius": 4,
               "fixedRadius": False,
@@ -129,9 +129,9 @@ config={
             "dataId": "species",
             "label": "species",
             "color": [
-              231,
-              159,
-              213
+              205,
+              225,
+              244
             ],
             "columns": {
               "geojson": "geometry"
@@ -168,7 +168,7 @@ config={
                   "#FFC300"
                 ]
               },
-              "radius": 10,
+              "radius": 0.2,
               "sizeRange": [
                 0,
                 10
@@ -220,90 +220,6 @@ config={
           }
         },
         {
-          "id": "fezuq1",
-          "type": "point",
-          "config": {
-            "dataId": "park_outliers",
-            "label": "Point",
-            "color": [
-              30,
-              150,
-              190
-            ],
-            "columns": {
-              "lat": "latitude",
-              "lng": "longitude",
-              "altitude": None
-            },
-            "isVisible": False,
-            "visConfig": {
-              "radius": 10,
-              "fixedRadius": False,
-              "opacity": 0.8,
-              "outline": False,
-              "thickness": 2,
-              "strokeColor": None,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "strokeColorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "radiusRange": [
-                0,
-                50
-              ],
-              "filled": True
-            },
-            "hidden": False,
-            "textLabel": [
-              {
-                "field": None,
-                "color": [
-                  255,
-                  255,
-                  255
-                ],
-                "size": 18,
-                "offset": [
-                  0,
-                  0
-                ],
-                "anchor": "start",
-                "alignment": "center"
-              }
-            ]
-          },
-          "visualChannels": {
-            "colorField": None,
-            "colorScale": "quantile",
-            "strokeColorField": None,
-            "strokeColorScale": "quantile",
-            "sizeField": None,
-            "sizeScale": "linear"
-          }
-        },
-        {
           "id": "sgqhcdq",
           "type": "geojson",
           "config": {
@@ -317,7 +233,7 @@ config={
             "columns": {
               "geojson": "geometry"
             },
-            "isVisible": False,
+            "isVisible": True,
             "visConfig": {
               "opacity": 0.8,
               "strokeOpacity": 0.8,
@@ -393,105 +309,18 @@ config={
           },
           "visualChannels": {
             "colorField": {
-              "name": "species_richness",
+              "name": "observation_count",
               "type": "integer"
             },
-            "colorScale": "quantile",
+            "colorScale": "quantize",
             "sizeField": None,
             "sizeScale": "linear",
-            "strokeColorField": {
-              "name": "species_richness",
-              "type": "integer"
-            },
-            "strokeColorScale": "quantize",
+            "strokeColorField": None,
+            "strokeColorScale": "quantile",
             "heightField": None,
             "heightScale": "linear",
             "radiusField": None,
             "radiusScale": "linear"
-          }
-        },
-        {
-          "id": "01y7lyr",
-          "type": "point",
-          "config": {
-            "dataId": "parks",
-            "label": "Point",
-            "color": [
-              18,
-              147,
-              154
-            ],
-            "columns": {
-              "lat": "latitude",
-              "lng": "longitude",
-              "altitude": None
-            },
-            "isVisible": False,
-            "visConfig": {
-              "radius": 10,
-              "fixedRadius": False,
-              "opacity": 0.8,
-              "outline": False,
-              "thickness": 2,
-              "strokeColor": None,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "strokeColorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "radiusRange": [
-                0,
-                50
-              ],
-              "filled": True
-            },
-            "hidden": False,
-            "textLabel": [
-              {
-                "field": None,
-                "color": [
-                  255,
-                  255,
-                  255
-                ],
-                "size": 18,
-                "offset": [
-                  0,
-                  0
-                ],
-                "anchor": "start",
-                "alignment": "center"
-              }
-            ]
-          },
-          "visualChannels": {
-            "colorField": None,
-            "colorScale": "quantile",
-            "strokeColorField": None,
-            "strokeColorScale": "quantile",
-            "sizeField": None,
-            "sizeScale": "linear"
           }
         },
         {
@@ -584,7 +413,7 @@ config={
           },
           "visualChannels": {
             "colorField": {
-              "name": "species_count",
+              "name": "observation_count",
               "type": "integer"
             },
             "colorScale": "quantize",
@@ -607,21 +436,24 @@ config={
               "phylum",
               "class",
               "order",
-              "family"
+              "family",
+              "genus",
+              "species",
+              "record_type"
             ],
             "park_outliers": [
               "park_name",
               "park_type",
               "park_prima",
-              "species_count",
-              "species_richness"
+              "observation_count",
+              "unique_species_count"
             ],
             "parks": [
               "park_name",
               "park_type",
               "park_prima",
-              "species_count",
-              "species_richness"
+              "observation_count",
+              "unique_species_count"
             ]
           },
           "enabled": True
@@ -647,10 +479,10 @@ config={
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 49.23834975753327,
-      "longitude": -123.14224073994116,
+      "latitude": 49.25187911925705,
+      "longitude": -123.12385345333853,
       "pitch": 0,
-      "zoom": 10.09468222457594,
+      "zoom": 11.678059714221947,
       "isSplit": False
     },
     "mapStyle": {
