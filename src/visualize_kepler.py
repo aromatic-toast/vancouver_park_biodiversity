@@ -18,7 +18,7 @@ from keplergl import KeplerGl
 # read in gbif data 
 clipped_gbif = gpd.read_file('data/clean_data/clipped_gbif.shp')
 clipped_gbif = clipped_gbif.rename(columns={'basis_of_r': 'record_type'})
-clipped_gbif = clipped_gbif.drop(labels['latitude', 'longitude'], axis=1)
+clipped_gbif = clipped_gbif.drop(labels=['latitude', 'longitude'], axis=1)
 
 # read in park
 park_outliers = gpd.read_file('data/clean_data/park_outliers.shp')
