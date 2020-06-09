@@ -511,7 +511,7 @@ config={
 ##### Make kepler map ###### 
 plot = bio.plot_kepler(layers=[clipped_gbif, park_outliers, parks_with_no_outliers],
                    names=['species', 'park_outliers','parks'],
-                   config=config)
+                   config=None)
                    
 plot.save_to_html(file_name='results/final_report_map.html')                 
 
