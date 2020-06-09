@@ -5,6 +5,7 @@ date: "07/06/2020"
 output: 
   html_document:
     toc: true
+    theme: darkly
     pandoc_args: --webtex
 always_allow_html: true
 bibliography: citations.bib
@@ -21,6 +22,8 @@ library(sf)
 library(knitr)
 library(gridExtra)
 library(grid)
+library(shinythemes)
+library(hrbrthemes)
 ```
 
 ```{r load_data}
@@ -29,9 +32,6 @@ gbif <- st_read('data/clean_data/vancouver_gbif.shp', quiet = TRUE)
 
 # load all parks w/metrics 
 parks <- read_csv("data/clean_data/all_parks_with_metrics.csv", col_types = cols()) # 
-test_parks <- parks[!is.na(parks$park_name), ]
-test_parks <- test_parks %>% select(park_name, species_count, species_richness)
-
 parks <- parks %>% 
       select(park_name, species_count, species_richness)
 
@@ -63,8 +63,9 @@ park_use <- tibble(Use_Table = unique(parks_with_no_outliers$park_primary_use))
 kable(park_use, caption = "Primary Uses of Vancouver Parks")
 ```
 
-## Tables 
-`
+
+
+
 
 ## Data Sources {.tabset .tabset-pills}
 
@@ -74,6 +75,7 @@ kable(park_use, caption = "Primary Uses of Vancouver Parks")
 
 shinyApp(
   ui = fluidPage(
+    theme = shinytheme("cerulean"),
     fluidRow(
       column(12,
         dataTableOutput('table1')
@@ -81,7 +83,7 @@ shinyApp(
     )
   ),
   server = function(input, output) {
-    output$table1 <- renderDataTable(head(clipped_gbif,10))
+    output$table1 <- renderDataTable(head(clipped_gbif,50))
   }
 )
 
@@ -93,6 +95,7 @@ shinyApp(
 # DataTables 
 shinyApp(
   ui = fluidPage(
+    theme = shinytheme("cerulean"),
     fluidRow(
       column(12,
         dataTableOutput('table2')
@@ -106,43 +109,99 @@ shinyApp(
 
 ```
 
-## Kepler Map 
+`
+
+## Observation Hotspots {.tabset .tabset-pills}
+
+### Proportion In Parks
 ```{r}
-knitr::include_url("https://yihui.org")
+# get relative proportions of observations inside and outside parks 
+observed_in_park <- nrow(clipped_gbif)
+outside_park <-  nrow(gbif) - observed_in_park
+
+species_in_out_df <- tibble(count_observed_in_park = c('yes', 'no'),
+                            count = c(observed_in_park, outside_park))
+
+pie <- species_in_out_df %>% 
+  ggplot(aes(x= factor(1), fill = count_observed_in_park)) +
+  geom_bar(width = 1) +
+  coord_polar("y") + 
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()) + 
+  labs(title = "Relative Proportion of Observations in Parks")
+
+pie
 ```
 
 
-## Results {.tabset .tabset-pills}
-
 ### No Outliers
 ```{r}
-knitr::include_graphics("results/no_outliers.png")
+# Question 2: What are the top 10 parks with the highest observations?
+obs_hotspots_no_outliers <- parks_with_no_outliers %>% 
+      arrange(desc(species_counts)) %>% 
+      head(10) %>% 
+      select(park_name, species_counts, species_richness)
+
+plot2 <- obs_hotspots_no_outliers %>% 
+      ggplot(aes(x = reorder(park_name, species_counts), y = species_counts)) + 
+      geom_col() + 
+      labs(title = "Top Ten Observation Hotspots",
+           x = 'Park Name',
+           y = 'Count of Observations') +
+      coord_flip() 
+plot2
 ```
 
 
 ### Outliers
 ```{r}
-knitr::include_graphics("results/outliers.png")
+#### outliers #### 
+plot2_1 <- outlier_parks %>% 
+      ggplot(aes(x = park_name, species_counts)) +
+      geom_col() + 
+      labs(title = "Outlier Observation Hotspots",
+           x = 'Park Name',
+           y = 'Count of Observations') +
+      coord_flip()
+plot2_1
 ```
 
 
-## Tables 
-```{r top_metrics}
+## Highest Unique Species {.tabset .tabset-pills}
 
-# Parks Data Table
-shinyApp(
-  ui = fluidPage(
-    fluidRow(
-      column(12,
-        dataTableOutput('table3')
-      )
-    )
-  ),
-  server = function(input, output) {
-    output$table3 <- renderDataTable(head(test_parks, 10)) #  head(parks, 10) head(clipped_gbif,10)
-  }
-)
+### No Outliers
+```{r}
+##### Question 3: which parks have the most species richness? ##### 
+top_species_rich <- parks_with_no_outliers %>% 
+      arrange(desc(species_richness)) %>% 
+      head(10) %>% 
+      select(park_name, species_counts, species_richness)
+
+plot3 <- top_species_rich %>% 
+      ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
+      geom_col() + 
+      labs(title = "Top Ten Parks for Species Richness",
+           x = 'Park Name',
+           y = 'Unique Species Count') +
+      coord_flip()
+plot3
 ```
+
+### Outliers
+```{r}
+### outliers species richnesss ###
+plot3_1 <- outlier_parks %>% 
+      ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
+      geom_col() + 
+      labs(title = "Outlier Parks for Species Richness",
+           x = 'Park Name',
+           y = 'Unique Species Count') +
+      coord_flip()
+plot3_1
+```
+
+
 
 # Analysis Methods 
 
