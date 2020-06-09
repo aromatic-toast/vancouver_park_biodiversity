@@ -40,15 +40,15 @@ config={
       "filters": [],
       "layers": [
         {
-          "id": "knderf",
+          "id": "inb6cun",
           "type": "geojson",
           "config": {
             "dataId": "species",
             "label": "species",
             "color": [
-              205,
-              225,
-              244
+              18,
+              147,
+              154
             ],
             "columns": {
               "geojson": "geometry"
@@ -57,8 +57,12 @@ config={
             "visConfig": {
               "opacity": 0.8,
               "strokeOpacity": 0.8,
-              "thickness": 0.5,
-              "strokeColor": None,
+              "thickness": 1.5,
+              "strokeColor": [
+                202,
+                242,
+                244
+              ],
               "colorRange": {
                 "name": "Global Warming",
                 "type": "sequential",
@@ -85,7 +89,7 @@ config={
                   "#FFC300"
                 ]
               },
-              "radius": 5,
+              "radius": 2,
               "sizeRange": [
                 0,
                 10
@@ -99,8 +103,8 @@ config={
                 500
               ],
               "elevationScale": 5,
-              "stroked": False,
-              "filled": True,
+              "stroked": True,
+              "filled": False,
               "enable3d": False,
               "wireframe": False
             },
@@ -137,115 +141,11 @@ config={
           }
         },
         {
-          "id": "sgqhcdq",
+          "id": "yl5swz",
           "type": "geojson",
           "config": {
             "dataId": "park_outliers",
             "label": "park_outliers",
-            "color": [
-              137,
-              218,
-              193
-            ],
-            "columns": {
-              "geojson": "geometry"
-            },
-            "isVisible": True,
-            "visConfig": {
-              "opacity": 0.8,
-              "strokeOpacity": 0.8,
-              "thickness": 0.5,
-              "strokeColor": [
-                179,
-                173,
-                158
-              ],
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "strokeColorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "radius": 10,
-              "sizeRange": [
-                0,
-                10
-              ],
-              "radiusRange": [
-                0,
-                50
-              ],
-              "heightRange": [
-                0,
-                500
-              ],
-              "elevationScale": 5,
-              "stroked": False,
-              "filled": True,
-              "enable3d": False,
-              "wireframe": False
-            },
-            "hidden": False,
-            "textLabel": [
-              {
-                "field": None,
-                "color": [
-                  255,
-                  255,
-                  255
-                ],
-                "size": 18,
-                "offset": [
-                  0,
-                  0
-                ],
-                "anchor": "start",
-                "alignment": "center"
-              }
-            ]
-          },
-          "visualChannels": {
-            "colorField": {
-              "name": "observation_count",
-              "type": "integer"
-            },
-            "colorScale": "quantize",
-            "sizeField": None,
-            "sizeScale": "linear",
-            "strokeColorField": None,
-            "strokeColorScale": "quantile",
-            "heightField": None,
-            "heightScale": "linear",
-            "radiusField": None,
-            "radiusScale": "linear"
-          }
-        },
-        {
-          "id": "aevc459",
-          "type": "geojson",
-          "config": {
-            "dataId": "parks",
-            "label": "parks",
             "color": [
               221,
               178,
@@ -330,7 +230,111 @@ config={
           },
           "visualChannels": {
             "colorField": {
-              "name": "observation_count",
+              "name": "unique_species_count",
+              "type": "integer"
+            },
+            "colorScale": "quantize",
+            "sizeField": None,
+            "sizeScale": "linear",
+            "strokeColorField": None,
+            "strokeColorScale": "quantile",
+            "heightField": None,
+            "heightScale": "linear",
+            "radiusField": None,
+            "radiusScale": "linear"
+          }
+        },
+        {
+          "id": "csj60fv",
+          "type": "geojson",
+          "config": {
+            "dataId": "parks",
+            "label": "parks",
+            "color": [
+              255,
+              153,
+              31
+            ],
+            "columns": {
+              "geojson": "geometry"
+            },
+            "isVisible": True,
+            "visConfig": {
+              "opacity": 0.8,
+              "strokeOpacity": 0.8,
+              "thickness": 0.5,
+              "strokeColor": [
+                241,
+                92,
+                23
+              ],
+              "colorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "strokeColorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "radius": 10,
+              "sizeRange": [
+                0,
+                10
+              ],
+              "radiusRange": [
+                0,
+                50
+              ],
+              "heightRange": [
+                0,
+                500
+              ],
+              "elevationScale": 5,
+              "stroked": False,
+              "filled": True,
+              "enable3d": False,
+              "wireframe": False
+            },
+            "hidden": False,
+            "textLabel": [
+              {
+                "field": None,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "unique_species_count",
               "type": "integer"
             },
             "colorScale": "quantize",
@@ -361,12 +365,14 @@ config={
             "park_outliers": [
               "park_name",
               "park_type",
+              "park_primary_use",
               "observation_count",
               "unique_species_count"
             ],
             "parks": [
               "park_name",
               "park_type",
+              "park_primary_use",
               "observation_count",
               "unique_species_count"
             ]
@@ -394,10 +400,10 @@ config={
     "mapState": {
       "bearing": 0,
       "dragRotate": False,
-      "latitude": 49.26912911359438,
-      "longitude": -123.15891023046912,
+      "latitude": 49.25173789017921,
+      "longitude": -123.13914153164245,
       "pitch": 0,
-      "zoom": 12.058158793119912,
+      "zoom": 11.780827885859514,
       "isSplit": False
     },
     "mapStyle": {
