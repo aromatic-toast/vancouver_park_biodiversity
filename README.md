@@ -30,7 +30,7 @@ The final kepler map can be ***[found here](https://aromatic-toast.github.io/van
 
 
 
-# Research Question 
+# Research Questions
 Urban parks provide an array of physical and psychological benefits to city residents. In addition to providing space for numerous recreational activities as well as natural beauty, urban parks can also provide an interface for residents to interact with wildlife through activities such as bird watching or mushroom picking. But how much of a city's biodiversity is observed in urban parks? More specifically, for residents who will record their sightings of wildlife (plants and animals) on citizen science websites, how much of these observations occur in urban parks? This project will explore the city parks of Vancouver, British Columbia and discover the types of biodiversity that is observed due to citizen science. The project will attemp to answer the following questions: 
 1) What proportion of Vancouver's biodiversity data is recorded in an urban park? 
 2) Which parks contain the most observations?
