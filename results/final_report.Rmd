@@ -38,21 +38,21 @@ parks <- read_csv("data/clean_data/all_parks_with_metrics.csv", col_types = cols
 # load clipped_gbif
 clipped_gbif <- st_read('data/clean_data/clipped_gbif.shp', quiet = TRUE)
 clipped_gbif <- clipped_gbif %>% 
-      rename(basis_of_record = basis_of_r)
+  rename(basis_of_record = basis_of_r)
 
 # load outlier parks
 outlier_parks <-  st_read('data/clean_data/park_outliers.shp', quiet = TRUE)
 outlier_parks <- outlier_parks %>% 
-      rename(park_primary_use = park_prima,
-             species_counts = species_co,
-             species_richness = species_ri )
+  rename(park_primary_use = park_prima,
+         species_counts = species_co,
+         species_richness = species_ri )
 
 # load parks with no outliers 
 parks_with_no_outliers <- st_read('data/clean_data/parks_with_no_outliers.shp', quiet = TRUE)
 parks_with_no_outliers <- parks_with_no_outliers %>% 
-      rename(park_primary_use = park_prima,
-             species_counts = species_co,
-             species_richness = species_ri)
+  rename(park_primary_use = park_prima,
+         species_counts = species_co,
+         species_richness = species_ri)
 ```
 
 
@@ -175,13 +175,13 @@ pie
 ```{r}
 #### outliers #### 
 plot2_1 <- outlier_parks %>% 
-      ggplot(aes(x = park_name, species_counts)) +
-      geom_col() + 
-      labs(title = "Outlier Observation Hotspots",
-           x = 'Park Name',
-           y = 'Count of Observations') +
-      coord_flip() + 
-      theme_ipsum()
+  ggplot(aes(x = park_name, species_counts)) +
+  geom_col() + 
+  labs(title = "Outlier Observation Hotspots",
+       x = 'Park Name',
+       y = 'Count of Observations') +
+  coord_flip() + 
+  theme_ipsum()
   
 plot2_1
 ```
@@ -196,13 +196,13 @@ obs_hotspots_no_outliers <- parks_with_no_outliers %>%
       select(park_name, species_counts, species_richness)
 
 plot2 <- obs_hotspots_no_outliers %>% 
-      ggplot(aes(x = reorder(park_name, species_counts), y = species_counts)) + 
-      geom_col() + 
-      labs(title = "Top Ten Observation Hotspots",
-           x = 'Park Name',
-           y = 'Count of Observations') +
-      coord_flip() +
-      theme_ipsum()
+  ggplot(aes(x = reorder(park_name, species_counts), y = species_counts)) + 
+  geom_col() + 
+  labs(title = "Top Ten Observation Hotspots",
+       x = 'Park Name',
+       y = 'Count of Observations') +
+  coord_flip() + 
+  theme_ipsum()
 plot2
 ```
 
@@ -219,12 +219,12 @@ The distribution of unique species is very similar to the top ten observation co
 ```{r}
 ### outliers species richnesss ###
 plot3_1 <- outlier_parks %>% 
-      ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
-      geom_col() + 
-      labs(title = "Outlier Parks for Species Richness",
-           x = 'Park Name',
-           y = 'Unique Species Count') +
-      coord_flip() + 
+  ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
+  geom_col() + 
+  labs(title = "Outlier Parks for Species Richness",
+       x = 'Park Name',
+       y = 'Unique Species Count') +
+  coord_flip() + 
   theme_ipsum()
 plot3_1
 ```
@@ -239,12 +239,12 @@ top_species_rich <- parks_with_no_outliers %>%
       select(park_name, species_counts, species_richness)
 
 plot3 <- top_species_rich %>% 
-      ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
-      geom_col() + 
-      labs(title = "Top Ten Parks for Species Richness",
-           x = 'Park Name',
-           y = 'Unique Species Count') +
-      coord_flip() +
+  ggplot(aes(x = reorder(park_name, species_richness), y = species_richness)) + 
+  geom_col() +
+  labs(title = "Top Ten Parks for Species Richness",
+       x = 'Park Name',
+       y = 'Unique Species Count') +
+  coord_flip() +
   theme_ipsum()
   
 plot3

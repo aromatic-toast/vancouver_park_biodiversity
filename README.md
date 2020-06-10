@@ -11,6 +11,17 @@ The hidden control panel on the left allows the user to view the layers of the m
 
 ![](img/kepler_full_panel.png)
 
+
+Expand the layer to change color scheme.
+<div style="text-align:left"><img src="kepler_color_adjust.png" /></div>
+ 
+
+Color the parks by `unique_species_count` or `observation_count` by selecting the `Color Based On` option. 
+<div style="text-align:left"><img src="kepler_color_adjust.png" /></div>
+
+
+
+
 The final report detailing all the steps of the analysis can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html)
 
 # Research Question 
