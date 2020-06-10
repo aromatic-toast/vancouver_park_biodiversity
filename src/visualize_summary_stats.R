@@ -48,7 +48,7 @@ obs_hotspots_no_outliers <- parks_with_no_outliers %>%
       select(park_name, species_co, species_ri)
 
 plot2 <- obs_hotspots_no_outliers %>% 
-      ggplot(aes(x = reorder(park_name, species_co), y = species_co)) + 
+      ggplot(aes(x = reorder(park_name, species_counts), y = species_counts)) + 
       geom_col() + 
       labs(title = "Top Ten Observation Hotspots",
            x = 'Park Name',
@@ -58,7 +58,7 @@ plot2 <- obs_hotspots_no_outliers %>%
 
 #### outliers #### 
 plot2_1 <- outlier_parks %>% 
-      ggplot(aes(x = park_name, species_co)) +
+      ggplot(aes(x = park_name, species_counts)) +
       geom_col() + 
       labs(title = "Outlier Observation Hotspots",
            x = 'Park Name',
