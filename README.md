@@ -3,26 +3,30 @@ A project to explore GBIF species occurrence data in Vancouver parks.
 
 - Author: Lesley Miller 
 
-# Vancouver Park Observation Hotspots 
-The final map can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
+# Final Report 
+The final report detailing all the steps of the analysis can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html).
+
+# Mapping Park Observation Hotspots 
+The final kepler map can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
 
 ### Exploring the kepler map
-The hidden control panel on the left allows the user to view the layers of the map. All layers are turned on by default but can be toggled on and off by clicking on the eye icon on the layer. 
+**1)** The hidden control panel on the left allows the user to view the layers of the map. All layers are turned on by default but can be toggled on and off by clicking on the eye icon on the layer. 
 
 <div style="text-align:left"><img src="img/kepler_full_panel.png" /></div>
+$~$
 
-
-Expand the layer to change color scheme.
-<div style="text-align:left"><img src="kepler_color_adjust.png" /></div>
+**2)** Expand the layer to change color scheme.
+$~$
+<div style="text-align:left"><img src="img/kepler_color_adjust.png" /></div>
+ $~$
  
 
-Color the parks by `unique_species_count` or `observation_count` by selecting the `Color Based On` option. 
-<div style="text-align:left"><img src="kepler_color_adjust.png" /></div>
+**3)** Color the parks by `unique_species_count` or `observation_count` by selecting the `Color Based On` option. 
+<div style="text-align:left"><img src="img/color_based_on.png" /></div>
+$~$
 
 
 
-
-The final report detailing all the steps of the analysis can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html)
 
 # Research Question 
 Urban parks provide an array of physical and psycholocial benefits to city residents. In addition to providing space for numerous recreational activities as well as natural beauty, urban parks can also provide an interface for residents to interact with wildlife through activities such as bird watching or mushroom picking. But how much of a city's biodiversity is observed in urban parks? More specifically, for residents who will record their sightings of wildlife (plants and animals) on citizen science websites, how much of these observations occur in urban parks? This project will explore the city parks of Vancouver, British Columbia and discover the types of biodiversity that is observed due to citizen science. The project will attemp to answer the following questions: 

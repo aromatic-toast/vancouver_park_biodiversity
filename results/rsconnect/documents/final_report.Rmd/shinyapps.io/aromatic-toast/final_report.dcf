@@ -5,6 +5,8 @@ account: aromatic-toast
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2434375
-bundleId: 3249951
+bundleId: 3249993
 url: https://aromatic-toast.shinyapps.io/final_report/
-when: 1591762031.63312
+when: 1591763616.09175
+asMultiple: FALSE
+asStatic: FALSE
