@@ -1,0 +1,12 @@
+name: final_report
+title:
+username:
+account: aromatic-toast
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2434375
+bundleId: 3249916
+url: https://aromatic-toast.shinyapps.io/final_report/
+when: 1591760615.65212
+asMultiple: FALSE
+asStatic: FALSE
