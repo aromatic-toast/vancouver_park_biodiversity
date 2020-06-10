@@ -12,17 +12,19 @@ The final kepler map can be found [here](https://aromatic-toast.github.io/vancou
 ### Exploring the kepler map
 **1)** The hidden control panel on the left allows the user to view the layers of the map. All layers are turned on by default but can be toggled on and off by clicking on the eye icon on the layer. 
 
-<div style="text-align:left"><img src="img/kepler_full_panel.png" /></div>
-$~$
+<div style="text-align:left"><img src="img/kepler_full_panel.png" /></div> 
+<br /> 
+
 
 **2)** Expand the layer to change color scheme.
-$~$
+
 <div style="text-align:left"><img src="img/kepler_color_adjust.png" /></div>
- $~$
+<br /> 
  
 
 **3)** Color the parks by `unique_species_count` or `observation_count` by selecting the `Color Based On` option. 
 <div style="text-align:left"><img src="img/color_based_on.png" /></div>
+<br /> 
 
 
 
