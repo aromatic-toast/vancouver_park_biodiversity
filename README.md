@@ -23,7 +23,7 @@ $~$
 
 **3)** Color the parks by `unique_species_count` or `observation_count` by selecting the `Color Based On` option. 
 <div style="text-align:left"><img src="img/color_based_on.png" /></div>
-$~$
+
 
 
 
