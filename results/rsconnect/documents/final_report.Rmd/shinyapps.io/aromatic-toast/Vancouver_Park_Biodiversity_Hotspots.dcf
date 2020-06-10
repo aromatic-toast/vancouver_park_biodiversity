@@ -1,0 +1,13 @@
+name: Vancouver_Park_Biodiversity_Hotspots
+title: Vancouver_Park_Biodiversity_Hotspots
+username:
+account: aromatic-toast
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2434597
+bundleId: 3250114
+url: https://aromatic-toast.shinyapps.io/Vancouver_Park_Biodiversity_Hotspots/
+when: 1591767301.70727
+asMultiple: TRUE
+asStatic: FALSE
+ignoredFiles: Vancouver_Park_Biodiversity_Hostpots.Rmd
