@@ -63,7 +63,7 @@ parks_with_no_outliers <- parks_with_no_outliers %>%
 
 
 ## Introduction
-The primary interest of this project was to explore the intersection between Vancouver, BC parks and geotagged species occurrence data obtained from the [Global Biodiversity Information Facility](https://www.gbif.org/), known from here on as GBIF. Any Vancouverite would be proud of our city parks and greenspaces as they serve as immense community resources with multifunctional benefits. Given that urban parks may be the primary interface with nature and wildlife for a great number of residents, this project attempted to answer how much species occurrence data has been collected in Vancouver parks over the last 10 years. The analysis answers 3 main questions. 
+The primary interest of this project was to explore the intersection between Vancouver, BC parks and geotagged species occurrence data obtained from the [Global Biodiversity Information Facility](https://www.gbif.org/), known from here on as GBIF. Any Vancouverite would be proud of our city parks and greenspaces as they serve as immense community resources with multifunctional benefits. Given that urban parks may be the primary interface with nature and wildlife for a great number of residents, this project attempted to answer how much species occurrence data has been collected in Vancouver parks over the last 11 years. The analysis answers 3 main questions:
 
 1) What proportion of Vancouver's biodiversity data is recorded in an urban park?
 2) Which parks contain the most observations?
