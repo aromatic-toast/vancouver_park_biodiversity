@@ -22,7 +22,8 @@ library(sf)
 library(knitr)
 library(gridExtra)
 library(grid)
-library(wesanderson)
+library(shinythemes)
+library(hrbrthemes)
 
 ```
 
