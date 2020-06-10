@@ -1,7 +1,7 @@
 # Vancouver Park Biodiversity
 A project to explore GBIF species occurrence data in Vancouver parks.
 
-- Author: Lesley Miller 
+- Author: [Lesley Miller](www.linkedin.com/in/lesley-miller)
 
 # Final Report 
 The final report detailing all the steps of the analysis can be ***[found here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html)***.
