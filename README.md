@@ -6,6 +6,8 @@ A project to explore GBIF species occurrence data in Vancouver parks.
 # Vancouver Park Observation Hotspots 
 The final map can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
 
+The final report detailing all the steps of the analysis can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html)
+
 # Research Question 
 Urban parks provide an array of physical and psycholocial benefits to city residents. In addition to providing space for numerous recreational activities as well as natural beauty, urban parks can also provide an interface for residents to interact with wildlife through activities such as bird watching or mushroom picking. But how much of a city's biodiversity is observed in urban parks? More specifically, for residents who will record their sightings of wildlife (plants and animals) on citizen science websites, how much of these observations occur in urban parks? This project will explore the city parks of Vancouver, British Columbia and discover the types of biodiversity that is observed due to citizen science. The project will attemp to answer the following questions: 
 1) What proportion of Vancouver's biodiversity data is recorded in an urban park? 
