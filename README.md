@@ -50,6 +50,18 @@ Geospatial data for Vancouver parks was obtained from the [BC Data Catalogue](ht
 3) The species counts for each park will be ranked to obtain the top 10 parks with the most observations. 
 4) The species richness (count of unique species) will then be calculated for each park to obtain the top 10 parks with the highest species richness. 
 
+# Data Pipeline 
+1) `clean_data.py`
+   - reads in raw data data and removes unnecessary columns on 
+   parks and gbif data.
+2) `get_species_metrics.py`
+   - Clips gbif points to inside parks polygons and calculates species metrics per park. 
+3) `visualize_kepler.py`
+   - Reads in processed data and produces a kepler map from species and parks data layers.
+
+
+
+
 # Dependencies 
 - Python 3.8.2 and Python Packages:
 
