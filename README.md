@@ -4,10 +4,10 @@ A project to explore GBIF species occurrence data in Vancouver parks.
 - Author: Lesley Miller 
 
 # Final Report 
-The final report detailing all the steps of the analysis can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html).
+The final report detailing all the steps of the analysis can be ***[found here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report.html)***.
 
 # Mapping Park Observation Hotspots 
-The final kepler map can be found [here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
+The final kepler map can be ***[found here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).***
 
 ### Exploring the kepler map
 **1)** The hidden control panel on the left allows the user to view the layers of the map. All layers are turned on by default but can be toggled on and off by clicking on the eye icon on the layer. 
