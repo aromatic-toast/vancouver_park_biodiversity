@@ -49,3 +49,22 @@ Geospatial data for Vancouver parks was obtained from the [BC Data Catalogue](ht
 2) The spatial distribution of parks will be mapped with an overlay of park species obsevations. 
 3) The species counts for each park will be ranked to obtain the top 10 parks with the most observations. 
 4) The species richness (count of unique species) will then be calculated for each park to obtain the top 10 parks with the highest species richness. 
+
+# Dependencies 
+- Python 3.8.2 and Python Packages:
+
+  - pandas==1.0.4
+  - geopandas==0.7.0
+  - keplergl==0.2.0
+  
+- R 3.6.1 and R Packages: 
+
+   - shiny
+   - tidyverse
+   - sf
+   - knitr
+   - gridExtra
+   - grid
+   - shinythemes
+   - hrbrthemes
+   
