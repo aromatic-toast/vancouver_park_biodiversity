@@ -236,7 +236,7 @@ The primary visualization product is a spatial map of Vancouver that includes pa
 
 3) By default, the map colours each park by `unique_species_count`. A user may change this by pressing the downward pointing arrow to expand the `parks`/`park_outliers` layers. By selecting `Fill Color`, a user can change the `Color Based On` option to color the parks based on the `obsevation_count`.
 
-4) In the top right corner of the map, a user can click on the 3rd icon from the top display the legend. 
+4) In the top right corner of the map, a user can click on the 3rd icon from the top to display the legend. 
 
 <iframe src="final_report_map.html" width="900" height="780" style="border: none;"></iframe>
 
