@@ -105,12 +105,10 @@ The raw GBIF data was first obtained through their API and then clipped to a gri
 ## Data Preparation 
 Since the analysis is visual, the data was then processed to produce new data that could be fed into a multi-layer map. The GBIF data points were clipped to within the park boundaries so that total observation counts as well as the count of unique species per park could be calculated. The clipped GBIF data and the parks along with its species metrics then became data layers in a **keplergl** map available [here for exploration](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html).
 
-## Data Visualization 
-The primary visualization product is a spatial map of Vancouver that includes park polygons and species observation data that was processed by the data pipeline. The map was produced using **keplergl** [@keplergl] and [can be found here](https://aromatic-toast.github.io/vancouver_park_biodiversity/results/final_report_map.html). A detailed walk-through of ways to explore a **keplergl** map is detailed [here](https://github.com/aromatic-toast/vancouver_park_biodiversity/blob/master/README.md). The map allows a user to zoom in on areas of interest as well as toggle data layers on/off using the hidden tool bar on the left hand side of the map. A tooltip displays the count metrics for parks (e.g observation count and unique species count) while the tool tip for a species observation includes the full taxonomy information as well as the type of record that was recorded. 
-
 This analysis was carried out with the amazing help from the following open source **R** packages: **R** [@R], **tidyverse** [@tidyverse], **here** [@here], **gridExtra** [@gridExtra] and **sf** [@sf]. 
 
 And the following **Python** packages: **Python** [@Python], **GeoPandas** [@geopandas0.7.0], **Pandas** [@pandas] and **keplergl** [@keplergl].
+
 
 # Results 
 
@@ -227,6 +225,20 @@ plot3 <- top_species_rich %>%
 plot3
 ```
 
+
+## Mapping Park Observation Hotspots
+The primary visualization product is a spatial map of Vancouver that includes park polygons and species observation data that was processed by the data pipeline. The map was produced using **keplergl** [@keplergl] and can be explored interactively. 
+
+### Exploring the kepler map
+1) The hidden control panel on the left allows the user to view the data layers of the map. The map consists of 3 data layers; species observations (points), park outliers (polygons) and the non-outlier parks (polygons). All layers are turned on by default but can be toggled on and off by clicking on the `eye icon` on the layer. Thus a user can view the outlier parks and non-outliers together or separately by adjusting which layers are visible. 
+
+2) Each spatial object either points or polygons has a tooltip that displays information about that observation. The tooltip for the polygons displays the count metrics for parks (e.g observation count and unique species count) while the tool tip for a species observation includes the full taxonomy information as well as the type of record that was recorded. 
+
+3) By default, the map colours each park by `unique_species_count`. A user may change this by pressing the downward pointing arrow to expand the `parks`/`park_outliers` layers. By selecting `Fill Color`, a user can change the `Color Based On` option to color the parks based on the `obsevation_count`.
+
+4) In the top right corner of the map, a user can click on the 3rd icon from the top display the legend. 
+
+<iframe src="final_report_map.html" width="900" height="780" style="border: none;"></iframe>
 
 # Conclusion
 This project explored the urban parks and species observations of Vancouver, BC. A key curiosity at the start of this project was how much citizen science data is recorded in Vancouver parks. Given how sparse the GBIF data is for Vancouver, there is only ~5,000 observations over an 11 year period, it was thought at the beginning that perhaps not many observations would be found in these places or perhaps they would be extremely clustered in only a few parks. It turns out that just over half of the data collected was found within parks, an unexpected result. This reinforces the presumption at the start of this project that urban parks serve as a gateway for residents to observe and interact with their natural environment. Though half the observations are found in only two parks, there are a number of other parks scattered across the landscape that serve as observation hotspots. 
