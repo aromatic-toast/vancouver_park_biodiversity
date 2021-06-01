@@ -4,7 +4,7 @@ author: "Lesley Miller"
 date: "07/06/2020"
 output:
   html_document:
-    theme: darkly
+    theme: flatly
     toc: yes
 bibliography: citations.bib
 resource_files:
@@ -16,19 +16,31 @@ resource_files:
 always_allow_html: yes
 ---
 
+```{r results="asis", echo=FALSE}
+cat("
+<style>
+caption {
+      color: black;
+      font-weight: bold;
+      font-size: 1.0em;
+    }
+</style>
+")
+```
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = here::here())
-library(shiny)
+#library(shiny)
 suppressPackageStartupMessages(library(tidyverse))
 library(sf)
 library(knitr)
 library(gridExtra)
 library(grid)
-library(shinythemes)
+#library(shinythemes)
 library(hrbrthemes)
-library(shinythemes)
+#library(shinythemes)
 ```
 
 ```{r load_data}
@@ -69,11 +81,11 @@ The primary interest of this project was to explore the intersection between Van
 2) Which parks contain the most observations?
 3) Which parks contain the largest number of different species?
 
-To answer these questions, the analysis makes use of two main data sources: Species occurrence data from [GBIF](https://www.gbif.org/) and spatial parks data from the [BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/local-and-regional-greenspaces). The interactive tables below allows a peak at the data underlying the analysis. Only the first few rows of each dataset are shown. 
+To answer these questions, the analysis makes use of two main data sources: Species occurrence data from [GBIF](https://www.gbif.org/) and spatial parks data from the [BC Data Catalogue](https://catalogue.data.gov.bc.ca/dataset/local-and-regional-greenspaces). The tables below allows a peak at the data underlying the analysis. Only the first few rows of each dataset are shown. Click on the dataset name under **Data Sources** section to reveal the datasets. 
 
-The GBIF contained 5,110 different observations and 882 unique species spanning 11 years from 2009 to 2019. All records are from human observation. As can be seen in the interactive GBIF table, each record contains the full taxonomy, geolocation, as well as the date and time an observation was recorded. 
+The GBIF contained 5,110 different observations and 882 unique species spanning 11 years from 2009 to 2019. All records are from human observation. As can be seen in the **GBIF Data**, each record contains the full taxonomy, geolocation, as well as the date and time an observation was recorded. 
 
-The parks data conains information for 234 parks having a range of primary park uses; the main use is just **Park** but the dataset also contains other types of greenspaces like athletic parks, golf courses and playgrounds. 
+The parks data contains information for 234 parks having a range of primary park uses; the main use is just **Park** but the dataset also contains other types of greenspaces like athletic parks, golf courses and playgrounds. Though **Pacific Spirit Park** is a regional park and not technically park of City of Vancouver parks, this gem of an urban forest adjacent to the City of Vancouver was still included in this analysis. 
 
 ```{r park_use}
 park_use <- as.data.frame(table(parks$park_prima))
@@ -229,14 +241,14 @@ plot3
 ## Mapping Park Observation Hotspots
 The primary visualization product is a spatial map of Vancouver that includes park polygons and species observation data that was processed by the data pipeline. The map was produced using **keplergl** [@keplergl] and can be explored interactively. 
 
-### Exploring the kepler map
-1) The hidden control panel on the left allows the user to view the data layers of the map. The map consists of 3 data layers; species observations (points), park outliers (polygons) and the non-outlier parks (polygons). All layers are turned on by default but can be toggled on and off by clicking on the `eye icon` on the layer. Thus a user can view the outlier parks and non-outliers together or separately by adjusting which layers are visible. 
+### Interactive Map Instructions 
+1) Click on the  ***greather than*** symbol in the top left corner to reveal the hidden control panel. This panel allows the user to view the data layers of the map. The map consists of 3 data layers; **species observations (points)**, **park outliers (polygons)** and the **non-outlier parks (polygons).** All layers are turned on by default but can be toggled on and off by clicking on the **eye icon** on the layer. Thus a user can view the outlier parks and non-outliers together or separately by adjusting which layers are visible. Click on the **icon 3rd from the top right corner** to reveal the map legend.
 
-2) Each spatial object either points or polygons has a tooltip that displays information about that observation. The tooltip for the polygons displays the count metrics for parks (e.g observation count and unique species count) while the tool tip for a species observation includes the full taxonomy information as well as the type of record that was recorded. 
+2) Zoom in on points and polygons to examine regions of interest. 
 
-3) By default, the map colours each park by `unique_species_count`. A user may change this by pressing the downward pointing arrow to expand the `parks`/`park_outliers` layers. By selecting `Fill Color`, a user can change the `Color Based On` option to color the parks based on the `obsevation_count`.
+3) Mouse over spatial features, either points or polygons to reveal a tooltip that displays information about that observation. The tooltip for the polygons displays the count metrics for parks (e.g observation count and unique species count) while the tool tip for a species observation includes the full taxonomy information as well as the type of record that was recorded. Zoom in closely on points to view the tooltip. 
 
-4) In the top right corner of the map, a user can click on the 3rd icon from the top to display the legend. 
+4) By default, the map colours each park by **unique_species_count**. A user may change this by pressing the downward pointing arrow to expand the **parks**/**park_outliers** layers. By selecting **Fill Color**, a user can change the **Color Based On** option to color the parks based on the **obsevation_count**.
 
 <iframe src="final_report_map.html" width="900" height="780" style="border: none;"></iframe>
 
